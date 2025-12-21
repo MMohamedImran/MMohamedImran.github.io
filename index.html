@@ -1,153 +1,42 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mohamed Imran — Portfolio</title>
-  <meta name="description" content="Resume and portfolio of Mohamed Imran." />
-  <link rel="stylesheet" href="style.css" />
-</head>
+<header class="topbar">
+  <div class="brand">Imran</div>
+  <nav class="nav">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Project</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-<body>
-  <header class="container header">
-    <a class="logo" href="#">MI</a>
-    <nav class="nav">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<section id="home" class="hero2">
+  <div class="hero-left">
+    <h1 class="hero-title">
+      Modern<br />
+      <span>PORTFOLIO</span>
+    </h1>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-text">
-        <p class="kicker">SMU Information Systems • Frontend • Product/UX</p>
-        <h1>Mohamed Imran</h1>
-        <p class="sub">
-          I build clean, practical web apps and prototypes. Interested in product, UI/UX, and SaaS ideas.
-        </p>
-
-        <div class="buttons">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#resume">View Resume</a>
-          <a class="btn ghost" href="https://github.com/mmohamedimran" target="_blank" rel="noreferrer">GitHub</a>
-          <!-- Replace with your LinkedIn when ready -->
-          <a class="btn ghost" href="#" id="linkedinBtn">LinkedIn</a>
-        </div>
-
-        <p class="note">Tip: Replace the placeholders with your real project links + screenshots.</p>
+    <div class="hero-bottom">
+      <div>
+        <p class="name">M Mohamed Imran</p>
+        <p class="role">Information Systems Undergraduate • Web / UI-UX</p>
       </div>
 
-      <div class="hero-card">
-        <div class="card">
-          <h3>Highlights</h3>
-          <ul>
-            <li>Built web apps using Vue / PHP / MySQL</li>
-            <li>Interested in UI/UX and startup building</li>
-            <li>Based in Singapore</li>
-          </ul>
-        </div>
+      <div class="hero-actions">
+        <a class="btn2 primary" href="assets/resume.pdf" target="_blank" rel="noreferrer">
+          Download Resume
+        </a>
+        <a class="btn2" href="#projects">View Projects</a>
       </div>
-    </section>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="grid">
-        <article class="project">
-          <div class="thumb">
-            <span>Screenshot</span>
-            <!-- Later: replace with <img src="assets/project1.png" alt="..."> -->
-          </div>
-          <h3>Invoice Tracking System</h3>
-          <p>PHP + MySQL app to record invoices, track unpaid balances, and view payment trends.</p>
-          <p class="meta">Tech: PHP, MySQL, Bootstrap</p>
-          <div class="links">
-            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="#" target="_blank" rel="noreferrer">Live Demo</a>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="thumb"><span>Screenshot</span></div>
-          <h3>Clinic Scheduling SaaS (Prototype)</h3>
-          <p>Automates appointment scheduling + confirmation emails via form → calendar workflow.</p>
-          <p class="meta">Tech: Google Forms, Calendar, Email automation</p>
-          <div class="links">
-            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="#" target="_blank" rel="noreferrer">Case Study</a>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="thumb"><span>Screenshot</span></div>
-          <h3>H2GO (Hydration App Concept)</h3>
-          <p>UI/UX prototype for runners: water-cooler locator + hydration reminders.</p>
-          <p class="meta">Tech: Figma, UX research</p>
-          <div class="links">
-            <a href="#" target="_blank" rel="noreferrer">Prototype</a>
-            <a href="#" target="_blank" rel="noreferrer">Write-up</a>
-          </div>
-        </article>
+      <div class="page">
+        <div class="page-label">Page</div>
+        <div class="page-num">01</div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <div class="two-col">
-        <p>
-          I’m an Information Systems undergraduate at Singapore Management University (SMU).
-          I enjoy building user-friendly web apps and designing clean interfaces. I’m also exploring
-          SaaS ideas for small businesses (payments, scheduling, tracking systems).
-        </p>
-        <div class="card small">
-          <h3>Skills</h3>
-          <ul class="tags">
-            <li>HTML/CSS</li><li>JavaScript</li><li>Vue</li><li>PHP</li><li>MySQL</li>
-            <li>Bootstrap</li><li>Figma</li><li>UI/UX</li><li>Git/GitHub</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="resume" class="section">
-      <h2>Resume</h2>
-      <p>
-        Add your resume PDF to <code>assets/resume.pdf</code>, then uncomment the button below.
-      </p>
-      <!--
-      <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noreferrer">Open Resume (PDF)</a>
-      -->
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/mmohamedimran" target="_blank" rel="noreferrer">github.com/mmohamedimran</a></p>
-        <p>LinkedIn: <a href="#" id="linkedinLink">Add your LinkedIn URL</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="container footer">
-    <p>© <span id="year"></span> Mohamed Imran</p>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Prevent dead LinkedIn placeholder from confusing people
-    const btn = document.getElementById("linkedinBtn");
-    const link = document.getElementById("linkedinLink");
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Add your LinkedIn URL in index.html (search for linkedinBtn/linkedinLink).");
-    });
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Replace this with your LinkedIn URL in index.html.");
-    });
-  </script>
-</body>
-</html>
+  <div class="hero-right">
+    <!-- Use your Homes screenshot as the hero image -->
+    <img src="assets/homes-1.png" alt="Homes project screenshot" />
+  </div>
+</section>
