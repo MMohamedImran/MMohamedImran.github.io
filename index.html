@@ -1,42 +1,219 @@
-<header class="topbar">
-  <div class="brand">Imran</div>
-  <nav class="nav">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Project</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imran | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-<section id="home" class="hero2">
-  <div class="hero-left">
-    <h1 class="hero-title">
-      Modern<br />
-      <span>PORTFOLIO</span>
-    </h1>
+<body>
+  <!-- Pink background accent like the reference -->
+  <div class="pink-accent"></div>
 
-    <div class="hero-bottom">
-      <div>
-        <p class="name">M Mohamed Imran</p>
-        <p class="role">Information Systems Undergraduate • Web / UI-UX</p>
+  <header class="container header-shell">
+    <nav class="nav">
+      <div class="brand">Imran</div>
+
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" onclick="closeNav()">About</a>
+        <a href="#projects" onclick="closeNav()">Projects</a>
+        <a href="#certs" onclick="closeNav()">Certs</a>
+        <a href="#contact" onclick="closeNav()">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container page">
+    <!-- HERO / ABOUT -->
+    <section class="hero" id="about">
+      <div class="hero-left">
+        <h1>
+          Hi, I’m <span class="name">Imran</span>,<br />
+          Creative Technologist
+        </h1>
+
+        <p class="lead">
+          Information Systems undergrad at SMU. I build clean, practical web apps with
+          Vue, Firebase, Bootstrap, and APIs (Maps, Stripe, etc.).
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
+          <a class="btn-secondary" href="#projects">View Projects</a>
+        </div>
       </div>
 
-      <div class="hero-actions">
-        <a class="btn2 primary" href="assets/resume.pdf" target="_blank" rel="noreferrer">
-          Download Resume
-        </a>
-        <a class="btn2" href="#projects">View Projects</a>
+      <div class="hero-right">
+        <div class="avatar-wrap">
+          <!-- Put your photo at assets/profile.jpg -->
+          <img class="avatar" src="assets/profile.jpg" alt="Profile photo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section soft" id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <span class="muted">Selected work</span>
       </div>
 
-      <div class="page">
-        <div class="page-label">Page</div>
-        <div class="page-num">01</div>
-      </div>
-    </div>
-  </div>
+      <div class="grid">
+        <!-- HOMES PROJECT (with screenshots) -->
+        <article class="card project-card">
+          <div class="project-images">
+            <!-- Update filenames to match what you uploaded -->
+            <img src="assets/projects/homes-1.png" alt="Homes screenshot 1">
+            <img src="assets/projects/homes-2.png" alt="Homes screenshot 2">
+          </div>
 
-  <div class="hero-right">
-    <!-- Use your Homes screenshot as the hero image -->
-    <img src="assets/homes-1.png" alt="Homes project screenshot" />
-  </div>
-</section>
+          <h3>Homes Marketplace</h3>
+          <p>
+            Multi-vendor marketplace for home-based businesses with listings, reviews,
+            maps integration, and payments.
+          </p>
+
+          <div class="tags">
+            <span>Vue.js</span>
+            <span>Firebase</span>
+            <span>Bootstrap</span>
+            <span>Google Maps API</span>
+            <span>Stripe</span>
+          </div>
+
+          <div class="card-actions">
+            <!-- Replace # with your real links -->
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">Live</a>
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Placeholder project cards (replace later) -->
+        <article class="card">
+          <h3>Invoice Tracking System</h3>
+          <p>
+            Tracks invoices, unpaid balances, and shop activity trends (PHP + MySQL).
+          </p>
+          <div class="tags">
+            <span>PHP</span><span>MySQL</span><span>WAMP</span>
+          </div>
+          <div class="card-actions">
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">Demo</a>
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>H2GO Hydration App</h3>
+          <p>
+            Hydration reminders and water-cooler locator concept designed with UX process.
+          </p>
+          <div class="tags">
+            <span>UX</span><span>Figma</span><span>Prototype</span>
+          </div>
+          <div class="card-actions">
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">Case Study</a>
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">Design</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certs">
+      <div class="section-head">
+        <h2>Certifications</h2>
+        <span class="muted">Google via Coursera</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Google Digital Marketing & E-commerce</h3>
+          <p>
+            Issued by Google via Coursera<br />
+            <strong>Issued:</strong> January 2025
+          </p>
+
+          <div class="tags">
+            <span>SEO</span>
+            <span>Digital Ads</span>
+            <span>E-commerce</span>
+            <span>Analytics</span>
+          </div>
+
+          <div class="card-actions">
+            <!-- Paste your Coursera verify link here -->
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">Verify</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Google UX Design</h3>
+          <p>
+            Issued by Google via Coursera<br />
+            <strong>Issued:</strong> December 2024
+          </p>
+
+          <div class="tags">
+            <span>UX Research</span>
+            <span>Wireframing</span>
+            <span>Prototyping</span>
+            <span>Usability Testing</span>
+          </div>
+
+          <div class="card-actions">
+            <!-- Paste your Coursera verify link here -->
+            <a class="small-link" href="#" target="_blank" rel="noreferrer">Verify</a>
+          </div>
+        </article>
+
+        <!-- Optional: add more certs later -->
+        <article class="card">
+          <h3>More coming</h3>
+          <p>Add more certificates as you complete them.</p>
+          <div class="tags">
+            <span>Coursera</span><span>Google</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section soft" id="contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <span class="muted">Let’s connect</span>
+      </div>
+
+      <div class="contact">
+        <!-- Replace with your real email + links -->
+        <a class="btn" href="mailto:your@email.com">Email Me</a>
+        <a class="btn-secondary" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn-secondary" href="#" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="muted">© <span id="year"></span> Imran</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleNav() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("open");
+    }
+    function closeNav() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.remove("open");
+    }
+  </script>
+</body>
+</html>
