@@ -69,7 +69,7 @@
         <article class="card project-card">
           <div class="project-images">
             <!-- Update filenames to match what you uploaded -->
-            <img src="assets/projects/homes-1.png" alt="Homes screenshot 1">
+            <img class="active" src="assets/projects/homes-1.png" alt="Homes screenshot 1">
             <img src="assets/projects/homes-2.png" alt="Homes screenshot 2">
           </div>
 
@@ -186,17 +186,35 @@
     </footer>
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    function toggleNav() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("open");
-    }
-    function closeNav() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.remove("open");
-    }
-  </script>
+  function toggleNav() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("open");
+  }
+  function closeNav() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.remove("open");
+  }
+
+  // Simple slideshow for each .project-images container
+  document.querySelectorAll('.project-images').forEach(container => {
+    const slides = container.querySelectorAll('img');
+    if (slides.length <= 1) return; // skip if only 1 image
+
+    let index = 0;
+
+    setInterval(() => {
+      // remove active from current
+      slides[index].classList.remove('active');
+      // move to next
+      index = (index + 1) % slides.length;
+      // add active to next
+      slides[index].classList.add('active');
+    }, 3000); // change every 3 seconds
+  });
+</script>
+
 </body>
 </html>

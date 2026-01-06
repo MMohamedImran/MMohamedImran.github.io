@@ -219,19 +219,24 @@ body{
 }
 
 /* PROJECT IMAGE GRID */
-.project-card img{
+/* PROJECT IMAGE SLIDESHOW */
+.project-images{
+  margin-bottom: 12px;
+}
+
+/* All images are hidden by default */
+.project-images img{
   width: 100%;
   border-radius: 10px;
   border: 1px solid var(--border);
-  display:block;
+  display: none;
 }
 
-.project-images{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 12px;
+/* Only the active one shows */
+.project-images img.active{
+  display: block;
 }
+
 
 /* BUTTONS */
 .btn{
@@ -281,6 +286,10 @@ body{
   .grid{
     grid-template-columns: 1fr;
   }
+
+  #projects .grid{
+  grid-template-columns: 1fr;
+}
 
   .hero{
     grid-template-columns: 1fr;
