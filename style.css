@@ -227,10 +227,12 @@ body{
   color: #2B7BBB;
 }
 
-/* PROJECT IMAGE THUMBNAILS */
+/* PROJECT IMAGE THUMBNAILS – standardized for all project cards */
 .project-card{
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0 auto 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-images{
