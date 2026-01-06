@@ -96,6 +96,10 @@ body{
   padding: 22px 8px 6px;
 }
 
+.hero-left{
+  text-align: left;
+}
+
 .hero h1{
   font-size: 44px;
   line-height: 1.1;
@@ -171,6 +175,11 @@ body{
   gap: 14px;
 }
 
+/* Make projects always one per row */
+#projects .grid{
+  grid-template-columns: 1fr;
+}
+
 .card{
   background: #fff;
   border: 1px solid var(--border);
@@ -218,7 +227,6 @@ body{
   color: #2B7BBB;
 }
 
-/* PROJECT IMAGE GRID */
 /* PROJECT IMAGE SLIDESHOW */
 .project-images{
   margin-bottom: 12px;
@@ -236,7 +244,6 @@ body{
 .project-images img.active{
   display: block;
 }
-
 
 /* BUTTONS */
 .btn{
@@ -283,13 +290,10 @@ body{
     padding: 18px;
   }
 
+  /* All grids become 1 column on small screens */
   .grid{
     grid-template-columns: 1fr;
   }
-
-  #projects .grid{
-  grid-template-columns: 1fr;
-}
 
   .hero{
     grid-template-columns: 1fr;
@@ -303,10 +307,6 @@ body{
 
   .hero h1{
     font-size: 36px;
-  }
-
-  .project-images{
-    grid-template-columns: 1fr;
   }
 
   .nav-toggle{
@@ -330,19 +330,20 @@ body{
   .nav-links.open{
     display:flex;
   }
-}
 
-  .hero-left{
-    order: 2;
-    text-align: center;
-  }
-
+  /* Mobile hero ordering: image on top, text below */
   .hero-right{
     order: 1;
     display: flex;
     justify-content: center;
   }
 
+  .hero-left{
+    order: 2;
+    text-align: center;
+  }
+
   .hero-actions{
     justify-content: center;
   }
+}
