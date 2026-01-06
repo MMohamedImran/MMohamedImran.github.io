@@ -227,8 +227,9 @@ body{
   color: #2B7BBB;
 }
 
-/* PROJECT IMAGE SLIDESHOW */
+/* PROJECT IMAGE SLIDES WITH ARROWS */
 .project-images{
+  position: relative;
   margin-bottom: 12px;
 }
 
@@ -244,6 +245,42 @@ body{
 .project-images img.active{
   display: block;
 }
+
+/* Arrow buttons */
+.project-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  padding: 0;
+}
+
+.project-arrow.prev{
+  left: 8px;
+}
+
+.project-arrow.next{
+  right: 8px;
+}
+
+@media (max-width: 700px){
+  .project-arrow{
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+}
+
 
 /* BUTTONS */
 .btn{
