@@ -179,10 +179,10 @@
 
       <div class="contact">
         <!-- Email button -->
-        <a class="btn-secondary"
-           href="mailto:mmohamedimran0402@gmail.com?subject=Portfolio%20Enquiry&body=Hi%20Imran%2C%0D%0A%0D%0A">
-          Email Me
-        </a>
+        <button class="btn-secondary" id="copyEmailBtn" type="button">
+          Copy Email
+        </button>
+
 
         <a class="btn-secondary"
            href="https://www.linkedin.com/in/mohamed-imran-349392268"
@@ -238,6 +238,18 @@
       lightbox.style.display = "none";
       lightboxImg.src = "";
     });
+
+    // Copy email to clipboard
+const copyBtn = document.getElementById("copyEmailBtn");
+copyBtn.addEventListener("click", () => {
+  const email = "mmohamedimran0402@gmail.com";
+
+  navigator.clipboard.writeText(email).then(() => {
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => copyBtn.textContent = "Copy Email", 1500);
+  });
+});
+
   </script>
 </body>
 </html>
