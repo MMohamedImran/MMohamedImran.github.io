@@ -62,12 +62,12 @@
       </div>
 
       <div class="grid">
-        <!-- HOMES PROJECT (with screenshots) -->
+        <!-- HOMES PROJECT (with small clickable screenshots) -->
         <article class="card project-card">
           <div class="project-images">
             <!-- Update filenames to match what you uploaded -->
-            <img src="assets/projects/homes-1.png" alt="Homes screenshot 1">
-            <img src="assets/projects/homes-2.png" alt="Homes screenshot 2">
+            <img class="thumb" src="assets/projects/homes-1.png" alt="Homes screenshot 1">
+            <img class="thumb" src="assets/projects/homes-2.png" alt="Homes screenshot 2">
           </div>
 
           <h3>Homes Marketplace</h3>
@@ -131,7 +131,7 @@
           </div>
 
           <div class="card-actions">
-            <!-- You can add verify link later -->
+            <!-- Verify link can go here -->
           </div>
         </article>
 
@@ -150,7 +150,7 @@
           </div>
 
           <div class="card-actions">
-            <!-- You can add verify link later -->
+            <!-- Verify link can go here -->
           </div>
         </article>
       </div>
@@ -179,6 +179,11 @@
     </footer>
   </main>
 
+  <!-- Lightbox for full image view -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Expanded project screenshot">
+  </div>
+
   <script>
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -193,6 +198,22 @@
       const nav = document.getElementById("navLinks");
       nav.classList.remove("open");
     }
+
+    // Image lightbox for thumbnails
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll(".project-images .thumb").forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+    });
   </script>
 </body>
 </html>

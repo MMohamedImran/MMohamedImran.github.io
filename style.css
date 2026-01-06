@@ -227,24 +227,50 @@ body{
   color: #2B7BBB;
 }
 
-/* PROJECT IMAGES SIMPLE GRID */
+/* PROJECT IMAGE THUMBNAILS */
 .project-card{
   max-width: 720px;
   margin: 0 auto;
 }
 
 .project-images{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 10px;
+  flex-wrap: wrap;
   margin-bottom: 12px;
 }
 
-.project-images img{
-  width: 100%;
+.project-images .thumb{
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
   border-radius: 10px;
   border: 1px solid var(--border);
-  display: block;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.project-images .thumb:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* LIGHTBOX VIEWER */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox img{
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,.5);
 }
 
 /* BUTTONS */
@@ -350,6 +376,6 @@ body{
   }
 
   .project-images{
-    grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
