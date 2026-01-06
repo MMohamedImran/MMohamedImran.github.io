@@ -293,9 +293,11 @@ body{
   filter: brightness(0.98);
 }
 
+/* SECONDARY BUTTON (links + buttons same look) */
 .btn-secondary,
 .btn-secondary:link,
-.btn-secondary:visited{
+.btn-secondary:visited,
+button.btn-secondary{
   display:inline-block;
   background: #fff;
   color: var(--text);
@@ -304,9 +306,12 @@ body{
   text-decoration:none;
   font-weight: 900;
   border: 1px solid var(--border);
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.btn-secondary:hover{
+.btn-secondary:hover,
+button.btn-secondary:hover{
   background:#F9FAFB;
 }
 
