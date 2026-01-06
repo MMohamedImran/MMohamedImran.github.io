@@ -322,3 +322,18 @@ body{
     display:flex;
   }
 }
+
+  .hero-left{
+    order: 2;
+    text-align: center;
+  }
+
+  .hero-right{
+    order: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-actions{
+    justify-content: center;
+  }
