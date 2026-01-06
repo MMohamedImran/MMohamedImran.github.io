@@ -230,7 +230,7 @@ body{
 /* PROJECT IMAGE THUMBNAILS – standardized for all project cards */
 .project-card{
   width: 100%;
-  margin: 0 0 18px;      /* remove auto centering */
+  margin: 0 0 18px;
   display: flex;
   flex-direction: column;
 }
@@ -276,10 +276,12 @@ body{
 }
 
 /* BUTTONS */
-.btn{
+.btn,
+.btn:link,
+.btn:visited{
   display:inline-block;
   background: var(--btn);
-  color: white;
+  color: #ffffff;
   padding: 12px 16px;
   border-radius: 10px;
   text-decoration:none;
@@ -287,9 +289,13 @@ body{
   box-shadow: 0 10px 20px rgba(255,92,108,0.25);
 }
 
-.btn:hover{filter: brightness(0.98)}
+.btn:hover{
+  filter: brightness(0.98);
+}
 
-.btn-secondary{
+.btn-secondary,
+.btn-secondary:link,
+.btn-secondary:visited{
   display:inline-block;
   background: #fff;
   color: var(--text);
@@ -300,7 +306,9 @@ body{
   border: 1px solid var(--border);
 }
 
-.btn-secondary:hover{background:#F9FAFB}
+.btn-secondary:hover{
+  background:#F9FAFB;
+}
 
 /* CONTACT + FOOTER */
 .contact{
