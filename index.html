@@ -1,16 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imran | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Pink background accent like the reference -->
+  <!-- Pink background accent -->
   <div class="pink-accent"></div>
 
   <header class="container header-shell">
@@ -61,25 +59,16 @@
     <section class="section soft" id="projects">
       <div class="section-head">
         <h2>Projects</h2>
-        <!-- <span class="muted">Selected work</span> -->
       </div>
 
       <div class="grid">
         <!-- HOMES PROJECT (with screenshots) -->
         <article class="card project-card">
-      <div class="project-images">
-        <div class="carousel-track">
-          <img src="assets/projects/homes-1.png" alt="Homes screenshot 1">
-          <img src="assets/projects/homes-2.png" alt="Homes screenshot 2">
-        </div>
-
-        <div class="carousel-controls">
-          <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
-          <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
-        </div>
-      </div>
-
-
+          <div class="project-images">
+            <!-- Update filenames to match what you uploaded -->
+            <img src="assets/projects/homes-1.png" alt="Homes screenshot 1">
+            <img src="assets/projects/homes-2.png" alt="Homes screenshot 2">
+          </div>
 
           <h3>Homes Marketplace</h3>
           <p>
@@ -96,26 +85,25 @@
           </div>
 
           <div class="card-actions">
-            <!-- Replace # with your real links -->
-            <a class="small-link" href="https://www.youtube.com/watch?v=NX6UiEhuP_k" >See Video</a>
-
+            <a class="small-link" href="https://www.youtube.com/watch?v=NX6UiEhuP_k" target="_blank" rel="noreferrer">
+              See Video
+            </a>
           </div>
         </article>
 
-        <!-- Placeholder project cards (replace later) -->
-        
-
+        <!-- H2GO PROJECT -->
         <article class="card">
           <h3>H2GO Hydration App</h3>
           <p>
-            Hydration reminders and water-cooler locator concept designed with UX process.
+            Hydration reminders and water-cooler locator concept designed with a UX process.
           </p>
           <div class="tags">
             <span>UX</span><span>Figma</span><span>Prototype</span>
           </div>
           <div class="card-actions">
-            <a class="small-link" href="https://drive.google.com/drive/folders/1TzxjLbHPIYfbpI49F8b2xw_S6Czcnk2u?usp=drive_link" >See Video</a>
- 
+            <a class="small-link" href="https://drive.google.com/drive/folders/1TzxjLbHPIYfbpI49F8b2xw_S6Czcnk2u?usp=drive_link" target="_blank" rel="noreferrer">
+              See Video
+            </a>
           </div>
         </article>
       </div>
@@ -125,7 +113,6 @@
     <section class="section" id="certs">
       <div class="section-head">
         <h2>Certifications</h2>
-        <!-- <span class="muted">Google via Coursera</span> -->
       </div>
 
       <div class="grid">
@@ -144,8 +131,7 @@
           </div>
 
           <div class="card-actions">
-            <!-- Paste your Coursera verify link here -->
-            <!-- <a class="small-link" href="#" target="_blank" rel="noreferrer">Verify</a> -->
+            <!-- You can add verify link later -->
           </div>
         </article>
 
@@ -164,13 +150,9 @@
           </div>
 
           <div class="card-actions">
-            <!-- Paste your Coursera verify link here -->
-            <!-- <a class="small-link" href="#" target="_blank" rel="noreferrer">Verify</a> -->
+            <!-- You can add verify link later -->
           </div>
         </article>
-
-        <!-- Optional: add more certs later -->
-
       </div>
     </section>
 
@@ -182,10 +164,13 @@
       </div>
 
       <div class="contact">
-        <!-- Replace with your real email + links -->
         <a class="btn" href="mailto:mmohamedimran0402@gmail.com">Email Me</a>
-        <a class="btn-secondary" href="www.linkedin.com/in/mohamed-imran-349392268">LinkedIn</a>
-        <a class="btn-secondary" href="https://wa.me/+6591812392" >Whatsapp</a>
+        <a class="btn-secondary" href="https://www.linkedin.com/in/mohamed-imran-349392268" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a class="btn-secondary" href="https://wa.me/6591812392" target="_blank" rel="noreferrer">
+          Whatsapp
+        </a>
       </div>
     </section>
 
@@ -194,51 +179,20 @@
     </footer>
   </main>
 
-<script>
-  // Footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Mobile nav
-  function toggleNav() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("open");
-  }
-  function closeNav() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.remove("open");
-  }
-
-  // Image carousel for each project
-  document.querySelectorAll('.project-images').forEach(container => {
-    const track = container.querySelector('.carousel-track');
-    const slides = Array.from(track.querySelectorAll('img'));
-    const prevBtn = container.querySelector('.carousel-btn.prev');
-    const nextBtn = container.querySelector('.carousel-btn.next');
-
-    if (!track || slides.length === 0 || !prevBtn || !nextBtn) return;
-
-    let index = 0;
-
-    function updateSlide() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-      track.style.transition = 'transform 0.4s ease';
+    // Mobile nav
+    function toggleNav() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("open");
     }
 
-    prevBtn.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateSlide();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateSlide();
-    });
-
-    // Start at first slide
-    updateSlide();
-  });
-</script>
-
-
+    function closeNav() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.remove("open");
+    }
+  </script>
 </body>
 </html>

@@ -227,61 +227,24 @@ body{
   color: #2B7BBB;
 }
 
-/* PROJECT IMAGE CAROUSEL – smaller, clean */
+/* PROJECT IMAGES SIMPLE GRID */
 .project-card{
-  max-width: 600px;          /* make project card narrower */
-  margin: 0 auto 18px;       /* center it */
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .project-images{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
-/* The visible window */
-.carousel-track{
-  display: flex;
+.project-images img{
   width: 100%;
-  max-height: 320px;         /* limit height so it's not huge */
-  overflow: hidden;
   border-radius: 10px;
   border: 1px solid var(--border);
-  background: #F3F4F6;
-}
-
-/* Each slide takes exactly 100% width */
-.carousel-track img{
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
   display: block;
-  object-fit: cover;
-}
-
-/* Controls (arrows under the image) */
-.carousel-controls{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.carousel-btn{
-  border: 1px solid var(--border);
-  background: #fff;
-  border-radius: 999px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  padding: 0;
-}
-
-.carousel-btn:hover{
-  background: #F3F4F6;
 }
 
 /* BUTTONS */
@@ -339,13 +302,13 @@ body{
   }
 
   .avatar-wrap{
-    margin: 8px 0 0;
+    margin: 8px auto 0;
     width: 200px;
     height: 200px;
   }
 
   .hero h1{
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .nav-toggle{
@@ -386,9 +349,7 @@ body{
     justify-content: center;
   }
 
-  .carousel-btn{
-    width: 28px;
-    height: 28px;
-    font-size: 16px;
+  .project-images{
+    grid-template-columns: 1fr;
   }
 }
