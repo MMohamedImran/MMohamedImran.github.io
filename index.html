@@ -67,14 +67,18 @@
       <div class="grid">
         <!-- HOMES PROJECT (with screenshots) -->
         <article class="card project-card">
-          <div class="project-images">
-            <button class="project-arrow prev" type="button" aria-label="Previous image">‹</button>
+      <div class="project-images">
+        <div class="carousel-track">
+          <img src="assets/projects/homes-1.png" alt="Homes screenshot 1">
+          <img src="assets/projects/homes-2.png" alt="Homes screenshot 2">
+        </div>
 
-            <img class="active" src="assets/projects/homes-1.png" alt="Homes screenshot 1">
-            <img src="assets/projects/homes-2.png" alt="Homes screenshot 2">
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
+          <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
+        </div>
+      </div>
 
-            <button class="project-arrow next" type="button" aria-label="Next image">›</button>
-          </div>
 
 
           <h3>Homes Marketplace</h3>
@@ -191,8 +195,10 @@
   </main>
 
 <script>
+  // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  // Mobile nav
   function toggleNav() {
     const nav = document.getElementById("navLinks");
     nav.classList.toggle("open");
@@ -202,23 +208,37 @@
     nav.classList.remove("open");
   }
 
-  // Simple slideshow for each .project-images container
+  // Image carousel for each project
   document.querySelectorAll('.project-images').forEach(container => {
-    const slides = container.querySelectorAll('img');
-    if (slides.length <= 1) return; // skip if only 1 image
+    const track = container.querySelector('.carousel-track');
+    const slides = Array.from(track.querySelectorAll('img'));
+    const prevBtn = container.querySelector('.carousel-btn.prev');
+    const nextBtn = container.querySelector('.carousel-btn.next');
+
+    if (!track || slides.length === 0 || !prevBtn || !nextBtn) return;
 
     let index = 0;
 
-    setInterval(() => {
-      // remove active from current
-      slides[index].classList.remove('active');
-      // move to next
+    function updateSlide() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      track.style.transition = 'transform 0.4s ease';
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
       index = (index + 1) % slides.length;
-      // add active to next
-      slides[index].classList.add('active');
-    }, 3000); // change every 3 seconds
+      updateSlide();
+    });
+
+    // Start at first slide
+    updateSlide();
   });
 </script>
+
 
 </body>
 </html>

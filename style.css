@@ -227,32 +227,37 @@ body{
   color: #2B7BBB;
 }
 
-/* PROJECT IMAGE SLIDES WITH ARROWS */
+/* PROJECT IMAGE CAROUSEL */
 .project-images{
-  position: relative;
   margin-bottom: 12px;
 }
 
-/* All images are hidden by default */
-.project-images img{
-  width: 100%;
+/* The visible window */
+.carousel-track{
+  display: flex;
+  overflow: hidden;
   border-radius: 10px;
   border: 1px solid var(--border);
-  display: none;
 }
 
-/* Only the active one shows */
-.project-images img.active{
+/* Each slide takes full width */
+.carousel-track img{
+  min-width: 100%;
   display: block;
+  object-fit: cover;
 }
 
-/* Arrow buttons */
-.project-arrow{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.95);
+/* Controls (arrows under the image) */
+.carousel-controls{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.carousel-btn{
   border: 1px solid var(--border);
+  background: #fff;
   border-radius: 999px;
   width: 32px;
   height: 32px;
@@ -261,26 +266,13 @@ body{
   justify-content: center;
   cursor: pointer;
   font-size: 18px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   padding: 0;
 }
 
-.project-arrow.prev{
-  left: 8px;
+.carousel-btn:hover{
+  background: #F3F4F6;
 }
-
-.project-arrow.next{
-  right: 8px;
-}
-
-@media (max-width: 700px){
-  .project-arrow{
-    width: 28px;
-    height: 28px;
-    font-size: 16px;
-  }
-}
-
 
 /* BUTTONS */
 .btn{
@@ -382,5 +374,11 @@ body{
 
   .hero-actions{
     justify-content: center;
+  }
+
+  .carousel-btn{
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
   }
 }
