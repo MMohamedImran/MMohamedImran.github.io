@@ -4,33 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imran | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Pink background accent -->
-  <div class="pink-accent"></div>
-
   <header class="container header-shell">
     <nav class="nav">
       <div class="brand">M Mohamed Imran</div>
 
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
-        ☰
-      </button>
-
       <div class="nav-links" id="navLinks">
-        <a href="#about" onclick="closeNav()">About</a>
-        <a href="#projects" onclick="closeNav()">Projects</a>
-        <a href="#certs" onclick="closeNav()">Certs</a>
-        <a href="#contact" onclick="closeNav()">Contact</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certs</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main class="container page">
     <!-- HERO / ABOUT -->
-    <section class="hero" id="about">
+    <section class="hero reveal" id="about">
       <div class="hero-left">
         <h1>
           Hi, I’m <span class="name">Imran</span>,<br />
@@ -42,8 +39,10 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
-        
+          <a class="btn" href="assets/resume.pdf" download>
+            <i class="ph-bold ph-file-arrow-down"></i>
+            Download Resume
+          </a>
         </div>
       </div>
 
@@ -56,9 +55,10 @@
     </section>
 
     <!-- PROJECTS -->
-    <section class="section soft" id="projects">
+    <section class="section soft reveal" id="projects">
       <div class="section-head">
         <h2>Projects</h2>
+        <span class="muted"><i class="ph ph-hand-pointing"></i> Click images to enlarge</span>
       </div>
 
       <div class="grid">
@@ -76,18 +76,18 @@
           </p>
 
           <div class="tags">
-            <span>Vue.js</span>
-            <span>Firebase</span>
-            <span>Bootstrap</span>
-            <span>Google Maps API</span>
-            <span>Stripe</span>
+            <span><i class="ph ph-code"></i> Vue.js</span>
+            <span><i class="ph ph-database"></i> Firebase</span>
+            <span><i class="ph ph-layout"></i> Bootstrap</span>
+            <span><i class="ph ph-map-pin"></i> Google Maps</span>
+            <span><i class="ph ph-credit-card"></i> Stripe</span>
           </div>
 
           <div class="card-actions">
             <a class="small-link"
                href="https://www.youtube.com/watch?v=NX6UiEhuP_k"
                target="_blank" rel="noreferrer">
-              See Video
+              <i class="ph ph-video-camera"></i> See Video
             </a>
           </div>
         </article>
@@ -107,16 +107,16 @@
           </p>
 
           <div class="tags">
-            <span>UX</span>
-            <span>Figma</span>
-            <span>Prototype</span>
+            <span><i class="ph ph-pencil-circle"></i> UX Research</span>
+            <span><i class="ph ph-figma-logo"></i> Figma</span>
+            <span><i class="ph ph-lightning"></i> Prototyping</span>
           </div>
 
           <div class="card-actions">
             <a class="small-link"
                href="https://drive.google.com/drive/folders/1TzxjLbHPIYfbpI49F8b2xw_S6Czcnk2u?usp=drive_link"
                target="_blank" rel="noreferrer">
-              See Video
+              <i class="ph ph-video-camera"></i> See Video
             </a>
           </div>
         </article>
@@ -124,7 +124,7 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section class="section" id="certs">
+    <section class="section reveal" id="certs">
       <div class="section-head">
         <h2>Certifications</h2>
       </div>
@@ -138,10 +138,10 @@
           </p>
 
           <div class="tags">
-            <span>SEO</span>
-            <span>Digital Ads</span>
-            <span>E-commerce</span>
-            <span>Analytics</span>
+            <span><i class="ph ph-magnifying-glass"></i> SEO</span>
+            <span><i class="ph ph-megaphone"></i> Digital Ads</span>
+            <span><i class="ph ph-shopping-cart"></i> E-commerce</span>
+            <span><i class="ph ph-chart-line"></i> Analytics</span>
           </div>
 
           <div class="card-actions">
@@ -157,10 +157,10 @@
           </p>
 
           <div class="tags">
-            <span>UX Research</span>
-            <span>Wireframing</span>
-            <span>Prototyping</span>
-            <span>Usability Testing</span>
+            <span><i class="ph ph-users"></i> UX Research</span>
+            <span><i class="ph ph-bounding-box"></i> Wireframing</span>
+            <span><i class="ph ph-mouse"></i> Prototyping</span>
+            <span><i class="ph ph-eye"></i> Usability Testing</span>
           </div>
 
           <div class="card-actions">
@@ -171,7 +171,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section soft" id="contact">
+    <section class="section soft reveal" id="contact">
       <div class="section-head">
         <h2>Contact</h2>
         <span class="muted">Let’s connect</span>
@@ -180,6 +180,7 @@
       <div class="contact">
         <!-- Email button -->
         <button class="btn-secondary" id="copyEmailBtn" type="button">
+          <i class="ph ph-copy"></i>
           Copy Email
         </button>
 
@@ -187,21 +188,30 @@
         <a class="btn-secondary"
            href="https://www.linkedin.com/in/mohamed-imran-349392268"
            target="_blank" rel="noreferrer">
+          <i class="ph ph-linkedin-logo"></i>
           LinkedIn
         </a>
 
         <a class="btn-secondary"
            href="https://wa.me/6591812392"
            target="_blank" rel="noreferrer">
+          <i class="ph ph-whatsapp-logo"></i>
           Whatsapp
         </a>
       </div>
     </section>
+  <button id="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+    <i class="ph-bold ph-arrow-up"></i>
+  </button>
 
     <footer class="footer">
-      
+      <p>&copy; <span id="year"></span> M Mohamed Imran</p>
     </footer>
   </main>
+
+  <button id="scroll-top" aria-label="Scroll to top" title="Scroll to top" class="">
+    <i class="ph-bold ph-arrow-up"></i>
+  </button>
 
   <!-- Lightbox for full image view -->
   <div class="lightbox" id="lightbox">
@@ -211,17 +221,6 @@
   <script>
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav
-    function toggleNav() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("open");
-    }
-
-    function closeNav() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.remove("open");
-    }
 
     // Image lightbox for thumbnails
     const lightbox = document.getElementById("lightbox");
@@ -250,6 +249,45 @@ copyBtn.addEventListener("click", () => {
   });
 });
 
-  </script>
+// Scroll to top visibility
+const scrollBtn = document.getElementById("scroll-top");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Scroll Reveal
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+// Sticky Header transition
+const header = document.querySelector(".header-shell");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
 </body>
 </html>
